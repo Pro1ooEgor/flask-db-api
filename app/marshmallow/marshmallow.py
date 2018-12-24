@@ -1,6 +1,7 @@
+from marshmallow import Schema, fields, ValidationError
+
 from app.database.models import Tasks
 from app import ma
-from marshmallow import Schema, fields, ValidationError
 
 
 class TasksSchema(ma.ModelSchema):

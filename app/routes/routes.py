@@ -1,7 +1,10 @@
-from app import app
 from flask import jsonify, make_response, request
-from app.service.database.interaction_with_bd import Interaction as Interaction_DB
+
+from app.service.database.interaction_with_bd import (
+    Interaction as Interaction_DB
+)
 from app.marshmallow.marshmallow import TaskSchema
+from app import app
 
 
 @app.errorhandler(404)

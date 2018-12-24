@@ -24,4 +24,9 @@ class Interaction:
 
     @classmethod
     def update_one_by_title(cls, title, new_title, description, done):
-        return cls.table.update_one_by_title(title=title, new_title=new_title, description=description, done=done)
+        return cls.table.update_one_by_title(
+            title=title,
+            new_title=new_title,
+            description=description,
+            done=done
+        )

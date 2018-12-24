@@ -43,7 +43,12 @@ class Tasks(db.Model):
         return record
 
     def __repr__(self):
-       return "<Task({}, {}, {}, {})>".format(self.unique_id, self.title, self.description, self.done)
+        return "<Task({}, {}, {}, {})>".format(
+            self.unique_id,
+            self.title,
+            self.description,
+            self.done
+        )
 
 
 db.create_all()
