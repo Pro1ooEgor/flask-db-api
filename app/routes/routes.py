@@ -11,12 +11,14 @@ def not_found(error):
 
 @app.route('/api/v1.0/tasks/getAll', methods=['GET'])
 def get_tasks():
-    return jsonify({'tasks': TaskSchema(many=True).dump(Interaction_DB.get_all(named=request.args.get('title', default=False))).data or 'Title not found'})
+    return jsonify({'tasks': TaskSchema(many=True).dump(
+        Interaction_DB.get_all(named=request.args.get('title', default=False))).data or 'Title not found'})
 
 
 @app.route('/api/v1.0/tasks/get', methods=['GET'])
 def get_task():
-    return jsonify({'task': TaskSchema().dump(Interaction_DB.get_one_by_title(request.args.get('title', type=str))).data}), 200
+    return jsonify({'task': TaskSchema().dump(
+        Interaction_DB.get_one_by_title(request.args.get('title'))).data}), 200
 
 
 @app.route('/api/v1.0/tasks/create', methods=['POST'])
