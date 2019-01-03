@@ -35,6 +35,7 @@ Record contains the following fields:
 | title | String, Required, No empty string* |
 | description | String, default=`` |
 | done  |  Boolean, default=False |
+
 *Cannot contain an empty string, a string consisting only of spaces.
 
 ## Get record
