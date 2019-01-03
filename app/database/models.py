@@ -36,7 +36,7 @@ class Tasks(db.Model):
         record = cls.get_one_by_title(title)
 
         record.title = new_title
-        record.description = description
+        record.description = description or record.description
         record.done = done
 
         db.session.commit()

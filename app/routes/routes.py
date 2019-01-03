@@ -20,7 +20,8 @@ def get_tasks():
                 Interaction_DB.get_all(
                     named=request.args.get('title', default=False)
                 )
-            ).data or 'Title not found'}
+            ).data or 'Title not found'
+        }
     )
 
 
@@ -51,7 +52,8 @@ def update_task():
     response = Interaction_DB.update_one_by_title(
         request.args.get('title'),
         request.json.get('title', request.args.get('title')),
-        request.json['description'],
+        # getting title from the url, if it not exist in the body of json object
+        request.json.get('description'),
         request.json.get('done', False)
     )
     return jsonify({'task': TaskSchema().dump(response).data}), 200
