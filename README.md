@@ -9,6 +9,7 @@ API, which is able to add records to the database, get records by title, get all
  - [Create record](#create-record)
  - [Update record](#update-record)
  - [Delete record](#delete-record)
+ - [Links](#links)
 
 ## How to run the API
 To run the API run file manage.py through your IDE or using the follow command in the console in your virtual environment.
