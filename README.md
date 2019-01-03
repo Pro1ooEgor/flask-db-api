@@ -26,12 +26,14 @@ Therefore, when you delete a record from the database, you get it in the json ob
 All examples here are written using the standard values of Flask: host=127.0.01 and port=5000.
 
 ## What fields does the record have
+
 Record contains the following fields:
+
 | field | description |
-|:-----:|:-----|
+| ----- | :----- |
 | unique_id | Integer, Primary key |
-| title  | String, Required, No empty string* |
-| description  | String, default=`` |
+| title | String, Required, No empty string* |
+| description | String, default=`` |
 | done  |  Boolean, default=False |
 *Cannot contain an empty string, a string consisting only of spaces.
 
@@ -47,7 +49,7 @@ To **get one** first record, you need to use its title and the following request
 ```
 [GET] host:port/api/v1.0/tasks/get?title=your record title
 ```
-:exclamation: Note, that you need to write the title with spaces, uppercase, and punctuation.
+:exclamation: Note, that you need to write the title with spaces, uppercase, and punctuation.  
 :pencil2: E.g. http://127.0.0.1:5000/api/v1.0/tasks/get?title=New Year 2019
 
 If you have two or more records with the same title, the first record with the smallest unique_id in the database will be returned.
@@ -95,7 +97,7 @@ To create the record in the database you need use POST request and send a json-o
 :exclamation: Note, that you can create a task without description, but title should be necessarily.
 
 ---
-:pencil2: E.g. [POST] http://127.0.0.1:5000/api/v1.0/tasks/create
+:pencil2: E.g. [POST] http://127.0.0.1:5000/api/v1.0/tasks/create  
 *Send json*
 ```json
 {
@@ -141,7 +143,7 @@ You also need to send a json-object with the field you want to change. It can be
 ```
 And we want to update the title and description in it.
 
-[PUT] http://127.0.0.1:5000/api/v1.0/tasks/update?title=hello
+[PUT] http://127.0.0.1:5000/api/v1.0/tasks/update?title=hello  
 *Send json*
 ```json
 {
@@ -171,7 +173,7 @@ To delete a record, send a DELETE request to the following URL.
 ```
 
 ---
-:pencil2: E.g. we want to delete the record with title "hello".
+:pencil2: E.g. we want to delete the record with title "hello".  
 [DELETE] http://127.0.0.1:5000/api/v1.0/tasks/delete?title=hello
 
 :dart: Result
