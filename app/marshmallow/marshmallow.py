@@ -1,13 +1,5 @@
 from marshmallow import Schema, fields, ValidationError
 
-from app.database.models import Tasks
-from app import ma
-
-
-class TasksSchema(ma.ModelSchema):
-    class Meta:
-        model = Tasks
-
 
 def not_blank(data):
     if not data.strip():

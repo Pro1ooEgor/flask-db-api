@@ -28,7 +28,7 @@ def get_tasks():
 @app.route('/api/v1.0/tasks/get', methods=['GET'])
 def get_task():
     return jsonify({'task': TaskSchema().dump(
-        Interaction_DB.get_one_by_title(request.args.get('title'))).data}), 200
+        Interaction_DB.get_one_by_title(request.args.get('title'))).data})
 
 
 @app.route('/api/v1.0/tasks/create', methods=['POST'])
@@ -56,7 +56,7 @@ def update_task():
         request.json.get('description'),
         request.json.get('done', False)
     )
-    return jsonify({'task': TaskSchema().dump(response).data}), 200
+    return jsonify({'task': TaskSchema().dump(response).data})
 
 
 @app.route('/api/v1.0/tasks/delete', methods=['DELETE'])
@@ -68,4 +68,4 @@ def delete_task():
                 Interaction_DB.delete_one_by_title(request.args.get('title'))
             ).data
         }
-    ), 200
+    )
